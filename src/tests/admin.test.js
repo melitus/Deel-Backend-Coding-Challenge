@@ -12,7 +12,7 @@ describe('Admin', () => {
       expect(body.data).toEqual(
         expect.objectContaining({
           profession: 'Programmer',
-          earned: 542,
+          earned: 2562,
         }),
       );
     });
@@ -30,13 +30,24 @@ describe('Admin', () => {
 
   describe('/admin/best-clients', () => {
     it('should return list of clients who paid most within given time range', async () => {
-      const actualValue = [{"fullName": "Harry Potter", "id": 1, "paid": 421}, {"fullName": "Mr Robot", "id": 2, "paid": 321}]
+      const actualValue = [
+        {
+            "id": 4,
+            "fullName": "Ash Kethcum",
+            "paid": 2020
+        },
+        {
+            "id": 1,
+            "fullName": "Harry Potter",
+            "paid": 421
+        }
+    ]
       const { statusCode, body } = await request(app)
         .get('/v1/api/admin/best-clients')
         .query({ startDate: '2020-08-15T19:11:26.737Z' })
         .query({ endDate: '2020-08-17T19:11:26.737Z' });
 
-      expect(statusCode).toEqual(200);
+        expect(statusCode).toEqual(200);
       expect(body.data).toEqual((actualValue));
     });
 
@@ -49,7 +60,7 @@ describe('Admin', () => {
 
       expect(statusCode).toEqual(200);
       expect(body.data).toHaveLength(1);
-      expect(body.data[0]).toEqual(expect.objectContaining({ fullName: 'Harry Potter', id: 1, paid: 421 }));
+      expect(body.data[0]).toEqual(expect.objectContaining({ fullName: 'Ash Kethcum', id: 4, paid: 2020 }));
     });
 
     it('should return [] if there are no jobs within given time range', async () => {

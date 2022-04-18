@@ -5,12 +5,33 @@ const app = require('../loaders');
 describe('Jobs', () => {
   describe('Unpaid jobs', () => {
     it('should return only unpaid jobs', async () => {
-        const actualValue = [{"ContractId": 2, "createdAt": "2022-04-17T13:29:05.340Z", "description": "work", "id": 2, "paid": null, "paymentDate": null, "price": 201, "updatedAt": "2022-04-17T13:29:05.340Z"}]
+        const actualValue = [
+          {
+              "id": 3,
+              "description": "work",
+              "price": 202,
+              "paid": null,
+              "paymentDate": null,
+              "createdAt": "2022-04-18T12:27:17.866Z",
+              "updatedAt": "2022-04-18T12:27:17.866Z",
+              "ContractId": 3
+          },
+          {
+              "id": 4,
+              "description": "work",
+              "price": 200,
+              "paid": null,
+              "paymentDate": null,
+              "createdAt": "2022-04-18T12:27:17.866Z",
+              "updatedAt": "2022-04-18T12:27:17.866Z",
+              "ContractId": 4
+          }
+      ]
       const { statusCode, body } = await request(app)
         .get('/v1/api/jobs/unpaid')
-        .set('profile_id', '1');
+        .set('profile_id', '2');
       expect(statusCode).toEqual(200);
-      expect(body.data).toHaveLength(1);
+      expect(body.data).toHaveLength(2);
       expect(body.data).toEqual(actualValue)
     });
 

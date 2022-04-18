@@ -45,7 +45,35 @@ describe('Contracts', () => {
 
   describe('/contracts', () => {
     it('should return not terminated contracts for the client', async () => {
-        const actualValue = [{"ClientId": 4, "ContractorId": 7, "createdAt": "2022-04-17T13:29:05.340Z", "id": 7, "status": "in_progress", "terms": "bla bla bla", "updatedAt": "2022-04-17T13:29:05.340Z"}, {"ClientId": 4, "ContractorId": 6, "createdAt": "2022-04-17T13:29:05.340Z", "id": 8, "status": "in_progress", "terms": "bla bla bla", "updatedAt": "2022-04-17T13:29:05.340Z"}, {"ClientId": 4, "ContractorId": 8, "createdAt": "2022-04-17T13:29:05.340Z", "id": 9, "status": "in_progress", "terms": "bla bla bla", "updatedAt": "2022-04-17T13:29:05.340Z"}]
+        const actualValue = [
+          {
+              "id": 7,
+              "terms": "bla bla bla",
+              "status": "in_progress",
+              "createdAt": "2022-04-18T12:27:17.866Z",
+              "updatedAt": "2022-04-18T12:27:17.866Z",
+              "ContractorId": 7,
+              "ClientId": 4
+          },
+          {
+              "id": 8,
+              "terms": "bla bla bla",
+              "status": "in_progress",
+              "createdAt": "2022-04-18T12:27:17.866Z",
+              "updatedAt": "2022-04-18T12:27:17.866Z",
+              "ContractorId": 6,
+              "ClientId": 4
+          },
+          {
+              "id": 9,
+              "terms": "bla bla bla",
+              "status": "in_progress",
+              "createdAt": "2022-04-18T12:27:17.866Z",
+              "updatedAt": "2022-04-18T12:27:17.866Z",
+              "ContractorId": 8,
+              "ClientId": 4
+          }
+      ]
       const { statusCode, body } = await request(app)
         .get('/v1/api/contracts')
         .set('profile_id', '4');
