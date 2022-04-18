@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "1d736cf4-53a7-460e-86ae-fd1b85d864e5",
+		"name": "Deel Backend Coding Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Contract",
+			"item": [
+				{
+					"name": "Get contract by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/api/contracts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"api",
+								"contracts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Non-terminated contract",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/api/contracts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"api",
+								"contracts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get Best Profession",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/v1/api/admin/best-profession?startDate=2020-08-15T19:11:26.737Z&endDate=2020-08-17T19:11:26.737Z",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"api",
+								"admin",
+								"best-profession"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2020-08-15T19:11:26.737Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2020-08-17T19:11:26.737Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Best Clients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/api/admin/best-clients?startDate=2020-08-15T19:11:26.737Z&endDate=2020-08-17T19:11:26.737Z&limit=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"api",
+								"admin",
+								"best-clients"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2020-08-15T19:11:26.737Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2020-08-17T19:11:26.737Z"
+								},
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Deposit Money",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/v1/api/balances/deposit/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"api",
+								"balances",
+								"deposit",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "Get Unpaid Job",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/api/jobs/unpaid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"api",
+								"jobs",
+								"unpaid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pay a job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/api/jobs/1/pay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"api",
+								"jobs",
+								"1",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

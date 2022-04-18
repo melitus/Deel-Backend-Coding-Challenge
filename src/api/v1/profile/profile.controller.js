@@ -13,6 +13,7 @@ const deposit = async (req, res) => {
       res.status(httpStatus.OK).json({ success: true, message: 'Money deposited successfully', data: response });
     }
   } catch (error) {
+    console.trace(error)
     res
       .status(httpStatus.INTERNAL_SERVER_ERROR)
       .json({ success: false, message: 'Error occurred while depositing money' });
