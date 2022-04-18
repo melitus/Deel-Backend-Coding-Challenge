@@ -1,0 +1,64 @@
+Arguments: 
+  /home/sunday/.nvm/versions/node/v16.14.0/bin/node /home/sunday/.nvm/versions/node/v16.14.0/bin/yarn install
+
+PATH: 
+  /home/sunday/.nvm/versions/node/v16.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/sunday/workspace/interviews/Deel-Backend-Coding-Challenge/package.json: Unexpected token } in JSON at position 446
+      at JSON.parse (<anonymous>)
+      at /home/sunday/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/sunday/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/sunday/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "deel-task",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "express": "4.17.1",
+      "http-status": "^1.5.0",
+      "sequelize": "^6.3.4",
+      "sqlite3": "5.0.0",
+      "winston": "^3.7.2"
+    },
+    "scripts": {
+      "start": "nodemon ./src/server/index.js",
+      "seed": "node ./scripts/seedDb.js",
+      "test": "DB_STORAGE=:memory: jest --runInBand --detectOpenHandles  --testTimeout=10000",
+    },
+    "devDependencies": {
+      "concurrently": "4.1.0",
+      "nodemon": "1.19.1",
+      "cross-env": "^7.0.3",
+      "jest": "^27.5.1",
+      "supertest": "^6.2.2",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-config-prettier": "^6.15.0",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-prettier": "^3.1.4",
+      "prettier": "^2.2.0"
+    },
+    "engines": {
+      "node": ">=10.16.3"
+    },
+    "engineStrict": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
